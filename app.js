@@ -29,7 +29,7 @@ new math('cosh(0)').evaluate(); // 1
 new math('tanh(0)').evaluate(); // 0
 
 // Logarithms
-new math('log10(100)').evaluate(); // 2
+new math('log(100, 10)').evaluate(); // 2
 new math('ln(Math.E)').evaluate(); // 1
 
 // Parentheses
