@@ -2,8 +2,8 @@
 
 Astra Math Solver is a JavaScript package that can evaluate mathematical expressions with support for various mathematical functions and constants.
 
-# Github
-https://github.com/johnandreopoulos/Astra-Math-Solver
+# Package
+https://www.npmjs.com/package/astra-math-solver
 
 ## Installation
 
