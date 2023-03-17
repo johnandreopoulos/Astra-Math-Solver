@@ -14,16 +14,12 @@ class Package {
         }
 
         const jsExpression = this._convertToJsSyntax();
-
-        let result;
         try {
-            result = eval(jsExpression);
-            console.log(`[${colors.green(PACKAGE_NAME)}] ${this.expression} = ${result}`);
+            return eval(jsExpression);
         } catch (error) {
             console.error(`[${colors.red(PACKAGE_NAME)}] Invalid mathematical expression.`);
         }
     }
-
     _convertToJsSyntax() {
         return this.expression
             .replace(/\s/g, '')
@@ -39,12 +35,15 @@ class Package {
             .replace(/(\d+)\^(\d+)/g, 'Math.pow($1, $2)')
             .replace(/π/g, 'Math.PI')
             .replace(/e/g, 'Math.E')
-            .replace(/sin\(/g, 'Math.sin(')
-            .replace(/cos\(/g, 'Math.cos(')
-            .replace(/tan\(/g, 'Math.tan(')
             .replace(/asin\(/g, 'Math.asin(')
             .replace(/acos\(/g, 'Math.acos(')
             .replace(/atan\(/g, 'Math.atan(')
+            .replace(/log\((\d+),(\d+)\)/g, 'Math.log($1) / Math.log($2)')
+            .replace(/ln\(/g, 'Math.log(')
+            .replace(/sqrt\(/g, 'Math.sqrt(')
+            .replace(/sin\(/g, 'Math.sin(')
+            .replace(/cos\(/g, 'Math.cos(')
+            .replace(/tan\(/g, 'Math.tan(')
             .replace(/sinh\(/g, 'Math.sinh(')
             .replace(/cosh\(/g, 'Math.cosh(')
             .replace(/tanh\(/g, 'Math.tanh(')
