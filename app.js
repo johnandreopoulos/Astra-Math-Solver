@@ -1,5 +1,4 @@
-console.clear();
-const math = require('./index');
+const math = require('astra-math-solver');
 
 // Addition and subtraction
 console.log(new math('5 + 3').evaluate()); // 8
